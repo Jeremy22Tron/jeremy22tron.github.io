@@ -10,6 +10,12 @@
 
     <!--Body-->
     <body class="Background">
+		<script>
+		  document.body.classList.add('fade-out');
+		  window.addEventListener('DOMContentLoaded', () => {
+		    document.body.classList.remove('fade-out');
+		  });
+		</script>
         
         <!--Navbar-->
         <div class="Navbar">
@@ -103,8 +109,12 @@
                     <label>Email:</label>
                         <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
                     <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here"> <br>
+			<label for="phone">Enter your phone number:</label>
+			<input type="tel" id="phone" name="phone"
+				   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+				       required> 
+                  <br>      <input type="submit" value="SUBMIT">
                 </form>
             </div>
         </div>

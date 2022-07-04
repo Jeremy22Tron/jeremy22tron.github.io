@@ -2,6 +2,13 @@
 /* Body */
 body {
     margin: 0%  /* This ensures our site displays all the way to the edge of the browser screen */
+    opacity: 1;
+    transition: 1s opacity;
+   }
+
+   body.fade-out {
+     opacity: 0;
+     transition: none;
 }
 
 /* Heading 1 elements */
@@ -208,7 +215,7 @@ footer {
     float: left;
     width: 50%;
     padding: 10px;
-    padding-top: 1.9%;
+    padding-top: 3%;
     height: 400px;
     background-color: black;
 	cursor: grab;
@@ -217,7 +224,7 @@ footer {
 /* This class is applied to the columns in the final row, overriding the height and padding to provide more room for the contact form  while keeping the rest of the formatting from Column_1 or Column_2 */
 .Column_tall {
     padding-top: 3.5%;
-    height: 450px;
+    height: 475px;
 }
 
 /* This inserts something after the content of selected elements (in this case the elements with class "Row") */
@@ -251,7 +258,7 @@ input[type=submit] {
     background-color: black; /* Sets the background color of the submit button to black */
     color: white; /* Sets the font color of the Submit button to white */
     font-weight: bold; /* Makes the font of the submit button bold */
-    padding: 12px 20px; /* Adds padding to the submit button */
+    padding: 10px 15px; /* Adds padding to the submit button */
     border: none; /* Removes the border from the submit button */
     border-radius: 4px; /* Gives the submit button the same rounded corners as the text boxes */
     cursor: pointer; /* Changes the cursor to pointer when over the submit button */
@@ -259,6 +266,7 @@ input[type=submit] {
     margin-left: auto; /* In combination with "margin-right: auto" this will center the submit button */
     margin-right: auto;
     font-family: Monaco;
+
 }
 
 /* Hover effect for submit button */
