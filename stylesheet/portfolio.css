@@ -105,6 +105,8 @@ img:hover {
 footer {
     padding: 2%; /* This gives the footer padding that is equal to 2% of the width of the element's area */
     background-color: white;
+    position: relative
+    bottom: 1
 }
 /***** END OF GENERAL STYLING *****/
 
