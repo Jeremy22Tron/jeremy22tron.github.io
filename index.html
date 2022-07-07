@@ -4,9 +4,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
-        <title>Jeremy Patton</title>
+        <title>Jeremy Patton Portfolio Page</title>
         <link rel="stylesheet" type="text/css" href="stylesheet/portfolio.css">
     </head>
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["fname"]["Email"]["Message"]["Phone"].value;
+  if (x == "") {
+    alert("More information needed");
+    return false;
+  }
+}
+</script>
 
     <!--Body-->
     <body class="Background">
@@ -22,7 +31,7 @@
             <a class="active" href="#Home">Home</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
@@ -70,8 +79,8 @@
                     <br>
                     <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Cybersecurity Boot Camp, and trained and experienced in the tech skills: HTML, CSS, Python, network security, and more. 
                     <br>
-                    <br>My full portfolio respoitory is below; I'm looking forward to hearing from you! 
-					<a href="#Contact">Contact</a> me below.
+                    <br>My full portfolio respoitory and Linkedin account is below; I'm looking forward to hearing from you! 
+					<a href="#Contact">Contact</a>
                 </p>
             </div>
         </div>
@@ -89,32 +98,36 @@
             </div>
             <!--Right column-->
             <div class="Column_2">
-                <a href="https://github.com/Jeremy22Tron" target="_blank"><img src="images/GitHub.png" alt="Jeremy Favicon"></a>
+                <a href="https://www.linkedin.com/in/jeremy-patton-725403188/" target="_blank"><img src="images/GitHub.png" alt="Jeremy Favicon"></a>
             </div>
         </div>
 
         <!--Contact section-->
-        <div class="Row" id="Contact">
+        <div id="Contact">
+            <button onclick="openForm()" class="Pop_Up">Contact</button>
             <!--Contact image, left column-->
             <div class="Column_2 Column_tall">
                 <img src="images/pexel1.jpeg" alt="Contact_Image">
             </div>
             <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="https://formspree.io/f/xzbowbek" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+            <div class="form-popup" id="myForm" ondblclick="closeForm()">
+                
+                
+                <form id="myForm" action="https://formspree.io/f/xzbowbek" onsubmit="return validateForm()" method="POST" class="form-container"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
                     <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
+                        <input type="text" name="fname" placeholder="Please enter your name here" required>
                     <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here" required> 
                     <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here"> <br>
-			<label for="phone">Enter your phone number:</label>
-			<input type="tel" id="phone" name="phone"
-				   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-				       required> 
-                  <br>      <input type="submit" value="SUBMIT">
+                        <input type="text" id="Message" name="Message" placeholder="Please write your message here" required> <br>
+			        <label for="phone">Enter your phone number:</label>
+			        <input type="tel" id="Phone" name="Phone" 
+				    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+				       required>
+                    <button type="submit" class="btn">SUBMIT</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>  
+
+                      
                 </form>
             </div>
         </div>
@@ -126,5 +139,6 @@
                 <br>
             </p>
         </footer>
+        <script src="js/portfolio.js"></script>
     </body>
 </html>
